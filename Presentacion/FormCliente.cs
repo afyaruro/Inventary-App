@@ -36,5 +36,10 @@ namespace Presentacion
             this.txtCelular.Text = "";
             this.txtCedulaBusqueda.Text = "";
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
