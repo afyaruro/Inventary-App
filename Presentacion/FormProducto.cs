@@ -28,12 +28,7 @@ namespace Presentacion
             this.Close();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            Form formulario = new FormEditarProducto();
-            formulario.Show();
-            
-        }
+        
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
@@ -42,7 +37,11 @@ namespace Presentacion
             this.txtTalla.Text = "";
             this.txtCantidad.Text = "";
             this.txtPrecio.Text = "";
-            this.txtCodigoBusqueda.Text = "";
+        }
+
+        private void txtPrecio_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

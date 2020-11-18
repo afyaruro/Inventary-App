@@ -24,8 +24,7 @@ namespace Presentacion
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Form formulario = new FormEditarCliente();
-            formulario.Show();
+            
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -34,12 +33,7 @@ namespace Presentacion
             this.txtNombre.Text = "";
             this.txtApellido.Text = "";
             this.txtCelular.Text = "";
-            this.txtCedulaBusqueda.Text = "";
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

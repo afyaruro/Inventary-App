@@ -66,7 +66,7 @@ namespace Presentacion
 
         private void btnListasFactura_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FormListaFactura>();
+            AbrirFormulario<FormConsultas>();
         }
     }
 }

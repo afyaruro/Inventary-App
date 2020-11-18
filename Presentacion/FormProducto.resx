@@ -117,21 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="ColumnCodigo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnNombre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnTalla.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnCantidad.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColumnPrecio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnEditar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -141,7 +126,7 @@
         0ouaTXEYpRfG5jg8ZLc4eL/ftDi8JCO8CcfFNznpSSlfc6B6KfqP5rcAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnEliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDesactivar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAHdJREFUSEvt
         lbENgEAMxH409l8CRmADSNrojJKjfUvufE9H1mbKEZ7hY5rbfAO5QjWcmB9B1MARUbEjomJHRMWOiIod
@@ -163,14 +148,6 @@
         lbENxDAMAz1a9l/iM0I2yFuFAEI4BrbS5oCrSCadNT52Oaa/6d00tvENyzml4Y7xEwsNOlqo3NFCZTWh
         TLVQWU0oUy1UVhPKVAuV1YQy1bJcLCzvlouF5V0tVhPKVAuV1YQy1UJlNaFMtVBZTShTLVTuaKFyR8s1
         pcGO8eRb4li8uQmxfTw4H4Ux/hubGwmtRjjBAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnBuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAJ5JREFUSEvd
-        ktsJhTAQBVOCJViSnWlnWoKd6A4YEFnJ2YT44cDAJd7sM+nXjOZsruZxyW/O+NbEYuagb5Kois30AnrS
-        UQil8qfckWCuXgBFaSc11WelLiKzfyrtwrsYsYh3KWKRlhHtZpHuS+7+TKGmC6n6O9Fd8EQHM4TSCf/J
-        xVQlYa73IMhr4SzPnKBNSRQ+TzJx0AOSdAv+W1I6AQV40u3u+evZAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

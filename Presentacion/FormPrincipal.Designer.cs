@@ -35,7 +35,7 @@
             this.panelDecoracion3 = new System.Windows.Forms.Panel();
             this.panelDecoracion1 = new System.Windows.Forms.Panel();
             this.panelDecoracion2 = new System.Windows.Forms.Panel();
-            this.btnListasFactura = new System.Windows.Forms.Button();
+            this.btnConsultas = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.logoApp = new System.Windows.Forms.PictureBox();
             this.btnCliente = new System.Windows.Forms.Button();
@@ -58,7 +58,7 @@
             this.panelMenu.Controls.Add(this.panelDecoracion3);
             this.panelMenu.Controls.Add(this.panelDecoracion1);
             this.panelMenu.Controls.Add(this.panelDecoracion2);
-            this.panelMenu.Controls.Add(this.btnListasFactura);
+            this.panelMenu.Controls.Add(this.btnConsultas);
             this.panelMenu.Controls.Add(this.btnSalir);
             this.panelMenu.Controls.Add(this.logoApp);
             this.panelMenu.Controls.Add(this.btnCliente);
@@ -110,22 +110,22 @@
             this.panelDecoracion2.Size = new System.Drawing.Size(7, 38);
             this.panelDecoracion2.TabIndex = 14;
             // 
-            // btnListasFactura
+            // btnConsultas
             // 
-            this.btnListasFactura.BackColor = System.Drawing.Color.Transparent;
-            this.btnListasFactura.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnListasFactura.FlatAppearance.BorderSize = 0;
-            this.btnListasFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListasFactura.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListasFactura.Image = ((System.Drawing.Image)(resources.GetObject("btnListasFactura.Image")));
-            this.btnListasFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListasFactura.Location = new System.Drawing.Point(6, 337);
-            this.btnListasFactura.Name = "btnListasFactura";
-            this.btnListasFactura.Size = new System.Drawing.Size(276, 38);
-            this.btnListasFactura.TabIndex = 13;
-            this.btnListasFactura.Text = "Lista Facturas";
-            this.btnListasFactura.UseVisualStyleBackColor = false;
-            this.btnListasFactura.Click += new System.EventHandler(this.btnListasFactura_Click);
+            this.btnConsultas.BackColor = System.Drawing.Color.Transparent;
+            this.btnConsultas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsultas.FlatAppearance.BorderSize = 0;
+            this.btnConsultas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultas.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultas.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultas.Image")));
+            this.btnConsultas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultas.Location = new System.Drawing.Point(6, 337);
+            this.btnConsultas.Name = "btnConsultas";
+            this.btnConsultas.Size = new System.Drawing.Size(276, 38);
+            this.btnConsultas.TabIndex = 13;
+            this.btnConsultas.Text = "Consultas";
+            this.btnConsultas.UseVisualStyleBackColor = false;
+            this.btnConsultas.Click += new System.EventHandler(this.btnListasFactura_Click);
             // 
             // btnSalir
             // 
@@ -273,7 +273,7 @@
         private System.Windows.Forms.PictureBox imagenApp;
         private System.Windows.Forms.PictureBox logoApp;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnListasFactura;
+        private System.Windows.Forms.Button btnConsultas;
         private System.Windows.Forms.Panel panelDecoracion5;
         private System.Windows.Forms.Panel panelDecoracion4;
         private System.Windows.Forms.Panel panelDecoracion3;

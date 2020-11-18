@@ -40,9 +40,6 @@
             this.ColumnSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelNumeroFactura = new System.Windows.Forms.Label();
             this.labelFecha = new System.Windows.Forms.Label();
-            this.labelDia = new System.Windows.Forms.Label();
-            this.labelMes = new System.Windows.Forms.Label();
-            this.labelAño = new System.Windows.Forms.Label();
             this.labelProducto = new System.Windows.Forms.Label();
             this.labelCodigo = new System.Windows.Forms.Label();
             this.labelNombreProducto = new System.Windows.Forms.Label();
@@ -60,26 +57,24 @@
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtNumeroFactura = new System.Windows.Forms.TextBox();
-            this.txtDia = new System.Windows.Forms.TextBox();
-            this.txtMes = new System.Windows.Forms.TextBox();
-            this.txtAño = new System.Windows.Forms.TextBox();
             this.labelFacturacion = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.labelApellidoMostrar = new System.Windows.Forms.Label();
-            this.labelNombreClienteMostrar = new System.Windows.Forms.Label();
-            this.labelCelularMostrar = new System.Windows.Forms.Label();
-            this.labelNombreProductoMostrar = new System.Windows.Forms.Label();
-            this.labelPrecioMostrar = new System.Windows.Forms.Label();
-            this.labelTallaMostrar = new System.Windows.Forms.Label();
-            this.labelTotalMostrar = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFactura)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGuardar
             // 
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.ForeColor = System.Drawing.Color.Black;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGuardar.Location = new System.Drawing.Point(663, 516);
@@ -91,9 +86,9 @@
             // 
             // btnTotal
             // 
-            this.btnTotal.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnTotal.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTotal.ForeColor = System.Drawing.Color.White;
+            this.btnTotal.ForeColor = System.Drawing.Color.Black;
             this.btnTotal.Image = ((System.Drawing.Image)(resources.GetObject("btnTotal.Image")));
             this.btnTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTotal.Location = new System.Drawing.Point(242, 513);
@@ -153,7 +148,7 @@
             // 
             this.labelNumeroFactura.AutoSize = true;
             this.labelNumeroFactura.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumeroFactura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.labelNumeroFactura.ForeColor = System.Drawing.Color.Black;
             this.labelNumeroFactura.Location = new System.Drawing.Point(141, 54);
             this.labelNumeroFactura.Name = "labelNumeroFactura";
             this.labelNumeroFactura.Size = new System.Drawing.Size(59, 16);
@@ -170,44 +165,11 @@
             this.labelFecha.TabIndex = 56;
             this.labelFecha.Text = "Fecha";
             // 
-            // labelDia
-            // 
-            this.labelDia.AutoSize = true;
-            this.labelDia.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.labelDia.Location = new System.Drawing.Point(367, 52);
-            this.labelDia.Name = "labelDia";
-            this.labelDia.Size = new System.Drawing.Size(27, 16);
-            this.labelDia.TabIndex = 57;
-            this.labelDia.Text = "Dia";
-            // 
-            // labelMes
-            // 
-            this.labelMes.AutoSize = true;
-            this.labelMes.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.labelMes.Location = new System.Drawing.Point(442, 52);
-            this.labelMes.Name = "labelMes";
-            this.labelMes.Size = new System.Drawing.Size(33, 16);
-            this.labelMes.TabIndex = 58;
-            this.labelMes.Text = "Mes";
-            // 
-            // labelAño
-            // 
-            this.labelAño.AutoSize = true;
-            this.labelAño.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAño.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.labelAño.Location = new System.Drawing.Point(523, 51);
-            this.labelAño.Name = "labelAño";
-            this.labelAño.Size = new System.Drawing.Size(31, 16);
-            this.labelAño.TabIndex = 59;
-            this.labelAño.Text = "Año";
-            // 
             // labelProducto
             // 
             this.labelProducto.AutoSize = true;
             this.labelProducto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.labelProducto.ForeColor = System.Drawing.Color.Black;
             this.labelProducto.Location = new System.Drawing.Point(9, 137);
             this.labelProducto.Name = "labelProducto";
             this.labelProducto.Size = new System.Drawing.Size(60, 16);
@@ -218,7 +180,7 @@
             // 
             this.labelCodigo.AutoSize = true;
             this.labelCodigo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCodigo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.labelCodigo.ForeColor = System.Drawing.Color.Black;
             this.labelCodigo.Location = new System.Drawing.Point(19, 174);
             this.labelCodigo.Name = "labelCodigo";
             this.labelCodigo.Size = new System.Drawing.Size(48, 16);
@@ -229,7 +191,7 @@
             // 
             this.labelNombreProducto.AutoSize = true;
             this.labelNombreProducto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombreProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.labelNombreProducto.ForeColor = System.Drawing.Color.Black;
             this.labelNombreProducto.Location = new System.Drawing.Point(275, 171);
             this.labelNombreProducto.Name = "labelNombreProducto";
             this.labelNombreProducto.Size = new System.Drawing.Size(53, 16);
@@ -240,7 +202,7 @@
             // 
             this.labelTalla.AutoSize = true;
             this.labelTalla.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTalla.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.labelTalla.ForeColor = System.Drawing.Color.Black;
             this.labelTalla.Location = new System.Drawing.Point(437, 171);
             this.labelTalla.Name = "labelTalla";
             this.labelTalla.Size = new System.Drawing.Size(34, 16);
@@ -251,7 +213,7 @@
             // 
             this.labelCantidad.AutoSize = true;
             this.labelCantidad.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCantidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.labelCantidad.ForeColor = System.Drawing.Color.Black;
             this.labelCantidad.Location = new System.Drawing.Point(177, 173);
             this.labelCantidad.Name = "labelCantidad";
             this.labelCantidad.Size = new System.Drawing.Size(59, 16);
@@ -262,7 +224,7 @@
             // 
             this.labelPrecio.AutoSize = true;
             this.labelPrecio.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrecio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.labelPrecio.ForeColor = System.Drawing.Color.Black;
             this.labelPrecio.Location = new System.Drawing.Point(523, 171);
             this.labelPrecio.Name = "labelPrecio";
             this.labelPrecio.Size = new System.Drawing.Size(93, 16);
@@ -273,7 +235,7 @@
             // 
             this.labelCliente.AutoSize = true;
             this.labelCliente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.labelCliente.ForeColor = System.Drawing.Color.Black;
             this.labelCliente.Location = new System.Drawing.Point(9, 80);
             this.labelCliente.Name = "labelCliente";
             this.labelCliente.Size = new System.Drawing.Size(48, 16);
@@ -284,7 +246,7 @@
             // 
             this.labelCedula.AutoSize = true;
             this.labelCedula.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCedula.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.labelCedula.ForeColor = System.Drawing.Color.Black;
             this.labelCedula.Location = new System.Drawing.Point(19, 106);
             this.labelCedula.Name = "labelCedula";
             this.labelCedula.Size = new System.Drawing.Size(48, 16);
@@ -295,7 +257,7 @@
             // 
             this.labelNombre.AutoSize = true;
             this.labelNombre.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.labelNombre.ForeColor = System.Drawing.Color.Black;
             this.labelNombre.Location = new System.Drawing.Point(171, 104);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(53, 16);
@@ -306,7 +268,7 @@
             // 
             this.labelApellido.AutoSize = true;
             this.labelApellido.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.labelApellido.ForeColor = System.Drawing.Color.Black;
             this.labelApellido.Location = new System.Drawing.Point(328, 103);
             this.labelApellido.Name = "labelApellido";
             this.labelApellido.Size = new System.Drawing.Size(54, 16);
@@ -317,7 +279,7 @@
             // 
             this.labelCelular.AutoSize = true;
             this.labelCelular.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCelular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.labelCelular.ForeColor = System.Drawing.Color.Black;
             this.labelCelular.Location = new System.Drawing.Point(484, 104);
             this.labelCelular.Name = "labelCelular";
             this.labelCelular.Size = new System.Drawing.Size(48, 16);
@@ -327,7 +289,7 @@
             // btnAñadir
             // 
             this.btnAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAñadir.ForeColor = System.Drawing.Color.White;
+            this.btnAñadir.ForeColor = System.Drawing.Color.Black;
             this.btnAñadir.Image = ((System.Drawing.Image)(resources.GetObject("btnAñadir.Image")));
             this.btnAñadir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAñadir.Location = new System.Drawing.Point(496, 219);
@@ -340,7 +302,7 @@
             // btnEliminar
             // 
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.ForeColor = System.Drawing.Color.Black;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.Location = new System.Drawing.Point(610, 219);
@@ -382,27 +344,6 @@
             this.txtNumeroFactura.Size = new System.Drawing.Size(100, 20);
             this.txtNumeroFactura.TabIndex = 85;
             // 
-            // txtDia
-            // 
-            this.txtDia.Location = new System.Drawing.Point(400, 51);
-            this.txtDia.Name = "txtDia";
-            this.txtDia.Size = new System.Drawing.Size(36, 20);
-            this.txtDia.TabIndex = 86;
-            // 
-            // txtMes
-            // 
-            this.txtMes.Location = new System.Drawing.Point(481, 50);
-            this.txtMes.Name = "txtMes";
-            this.txtMes.Size = new System.Drawing.Size(36, 20);
-            this.txtMes.TabIndex = 87;
-            // 
-            // txtAño
-            // 
-            this.txtAño.Location = new System.Drawing.Point(555, 50);
-            this.txtAño.Name = "txtAño";
-            this.txtAño.Size = new System.Drawing.Size(65, 20);
-            this.txtAño.TabIndex = 88;
-            // 
             // labelFacturacion
             // 
             this.labelFacturacion.AutoSize = true;
@@ -417,7 +358,7 @@
             // 
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnCerrar.ForeColor = System.Drawing.Color.Black;
             this.btnCerrar.Location = new System.Drawing.Point(731, 12);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(40, 23);
@@ -428,86 +369,92 @@
             // 
             // txtCantidad
             // 
+            this.txtCantidad.Enabled = false;
             this.txtCantidad.Location = new System.Drawing.Point(233, 167);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(36, 20);
             this.txtCantidad.TabIndex = 93;
             // 
-            // labelApellidoMostrar
+            // dateTimePicker1
             // 
-            this.labelApellidoMostrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelApellidoMostrar.Location = new System.Drawing.Point(388, 103);
-            this.labelApellidoMostrar.Name = "labelApellidoMostrar";
-            this.labelApellidoMostrar.Size = new System.Drawing.Size(90, 16);
-            this.labelApellidoMostrar.TabIndex = 94;
+            this.dateTimePicker1.Location = new System.Drawing.Point(377, 50);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 94;
             // 
-            // labelNombreClienteMostrar
+            // textBox1
             // 
-            this.labelNombreClienteMostrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombreClienteMostrar.Location = new System.Drawing.Point(220, 103);
-            this.labelNombreClienteMostrar.Name = "labelNombreClienteMostrar";
-            this.labelNombreClienteMostrar.Size = new System.Drawing.Size(90, 16);
-            this.labelNombreClienteMostrar.TabIndex = 95;
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(228, 103);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 95;
             // 
-            // labelCelularMostrar
+            // textBox2
             // 
-            this.labelCelularMostrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCelularMostrar.Location = new System.Drawing.Point(530, 103);
-            this.labelCelularMostrar.Name = "labelCelularMostrar";
-            this.labelCelularMostrar.Size = new System.Drawing.Size(90, 16);
-            this.labelCelularMostrar.TabIndex = 96;
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(378, 102);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 96;
             // 
-            // labelNombreProductoMostrar
+            // textBox3
             // 
-            this.labelNombreProductoMostrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombreProductoMostrar.Location = new System.Drawing.Point(328, 171);
-            this.labelNombreProductoMostrar.Name = "labelNombreProductoMostrar";
-            this.labelNombreProductoMostrar.Size = new System.Drawing.Size(90, 16);
-            this.labelNombreProductoMostrar.TabIndex = 97;
+            this.textBox3.Enabled = false;
+            this.textBox3.Location = new System.Drawing.Point(526, 102);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 97;
             // 
-            // labelPrecioMostrar
+            // textBox4
             // 
-            this.labelPrecioMostrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrecioMostrar.Location = new System.Drawing.Point(613, 170);
-            this.labelPrecioMostrar.Name = "labelPrecioMostrar";
-            this.labelPrecioMostrar.Size = new System.Drawing.Size(90, 16);
-            this.labelPrecioMostrar.TabIndex = 98;
+            this.textBox4.Enabled = false;
+            this.textBox4.Location = new System.Drawing.Point(331, 167);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 98;
             // 
-            // labelTallaMostrar
+            // textBox5
             // 
-            this.labelTallaMostrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTallaMostrar.Location = new System.Drawing.Point(474, 170);
-            this.labelTallaMostrar.Name = "labelTallaMostrar";
-            this.labelTallaMostrar.Size = new System.Drawing.Size(36, 16);
-            this.labelTallaMostrar.TabIndex = 99;
+            this.textBox5.Enabled = false;
+            this.textBox5.Location = new System.Drawing.Point(617, 167);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.TabIndex = 99;
             // 
-            // labelTotalMostrar
+            // textBox6
             // 
-            this.labelTotalMostrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalMostrar.Location = new System.Drawing.Point(93, 516);
-            this.labelTotalMostrar.Name = "labelTotalMostrar";
-            this.labelTotalMostrar.Size = new System.Drawing.Size(114, 29);
-            this.labelTotalMostrar.TabIndex = 100;
+            this.textBox6.Enabled = false;
+            this.textBox6.Location = new System.Drawing.Point(477, 167);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(33, 20);
+            this.textBox6.TabIndex = 100;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Enabled = false;
+            this.textBox7.Location = new System.Drawing.Point(100, 525);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(100, 20);
+            this.textBox7.TabIndex = 101;
             // 
             // FormCrearFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(783, 561);
-            this.Controls.Add(this.labelTotalMostrar);
-            this.Controls.Add(this.labelTallaMostrar);
-            this.Controls.Add(this.labelPrecioMostrar);
-            this.Controls.Add(this.labelNombreProductoMostrar);
-            this.Controls.Add(this.labelCelularMostrar);
-            this.Controls.Add(this.labelNombreClienteMostrar);
-            this.Controls.Add(this.labelApellidoMostrar);
+            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.labelFacturacion);
-            this.Controls.Add(this.txtAño);
-            this.Controls.Add(this.txtMes);
-            this.Controls.Add(this.txtDia);
             this.Controls.Add(this.txtNumeroFactura);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.txtCedula);
@@ -525,9 +472,6 @@
             this.Controls.Add(this.labelNombreProducto);
             this.Controls.Add(this.labelCodigo);
             this.Controls.Add(this.labelProducto);
-            this.Controls.Add(this.labelAño);
-            this.Controls.Add(this.labelMes);
-            this.Controls.Add(this.labelDia);
             this.Controls.Add(this.labelFecha);
             this.Controls.Add(this.labelNumeroFactura);
             this.Controls.Add(this.dataGridFactura);
@@ -551,9 +495,6 @@
         private System.Windows.Forms.DataGridView dataGridFactura;
         private System.Windows.Forms.Label labelNumeroFactura;
         private System.Windows.Forms.Label labelFecha;
-        private System.Windows.Forms.Label labelDia;
-        private System.Windows.Forms.Label labelMes;
-        private System.Windows.Forms.Label labelAño;
         private System.Windows.Forms.Label labelProducto;
         private System.Windows.Forms.Label labelCodigo;
         private System.Windows.Forms.Label labelNombreProducto;
@@ -579,16 +520,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSubtotal;
         public System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.TextBox txtCantidad;
-        public System.Windows.Forms.Label labelApellidoMostrar;
-        public System.Windows.Forms.Label labelNombreClienteMostrar;
-        public System.Windows.Forms.Label labelCelularMostrar;
-        public System.Windows.Forms.Label labelNombreProductoMostrar;
-        public System.Windows.Forms.Label labelPrecioMostrar;
-        public System.Windows.Forms.Label labelTallaMostrar;
-        public System.Windows.Forms.Label labelTotalMostrar;
         public System.Windows.Forms.TextBox txtNumeroFactura;
-        public System.Windows.Forms.TextBox txtDia;
-        public System.Windows.Forms.TextBox txtMes;
-        public System.Windows.Forms.TextBox txtAño;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        public System.Windows.Forms.TextBox textBox7;
     }
 }
