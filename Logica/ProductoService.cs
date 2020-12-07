@@ -34,9 +34,32 @@ namespace Logica
             finally { conexion.Close(); }
         }
 
-        public BusquedaProductoRespuesta BuscarxCodigo(string codigo)
+        public ConsultaRespuesta ConsultarTodos()
         {
-            BusquedaProductoRespuesta respuesta = new BusquedaProductoRespuesta();
+            ConsultaRespuesta respuesta = new ConsultaRespuesta();
+            try
+            {
+
+                conexion.Open();
+                respuesta.Productos = repositorio.ConsultarTodos();
+                conexion.Close();
+                respuesta.Error = false;
+                respuesta.Mensaje = (respuesta.Productos.Count > 0) ? "Se consultan los Datos" : "No hay datos para consultar";
+                return respuesta;
+            }
+            catch (Exception e)
+            {
+                respuesta.Mensaje = $"Error de la Aplicacion: {e.Message}";
+                respuesta.Error = true;
+                return respuesta;
+            }
+            finally { conexion.Close(); }
+
+        }
+
+        public BusquedaRespuesta BuscarxCodigo(string codigo)
+        {
+            BusquedaRespuesta respuesta = new BusquedaRespuesta();
             try
             {
                 conexion.Open();
@@ -83,7 +106,7 @@ namespace Logica
 
     }
 
-    public class ConsultaProductoRespuesta
+    public class ConsultaRespuesta
     {
         public bool Error { get; set; }
         public string Mensaje { get; set; }
@@ -91,7 +114,7 @@ namespace Logica
     }
 
 
-    public class BusquedaProductoRespuesta
+    public class BusquedaRespuesta
     {
         public bool Error { get; set; }
         public string Mensaje { get; set; }

@@ -97,7 +97,9 @@
             // dataGridFactura
             // 
             this.dataGridFactura.AllowUserToOrderColumns = true;
+            this.dataGridFactura.BackgroundColor = System.Drawing.Color.White;
             this.dataGridFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridFactura.GridColor = System.Drawing.Color.White;
             this.dataGridFactura.Location = new System.Drawing.Point(74, 261);
             this.dataGridFactura.Name = "dataGridFactura";
             this.dataGridFactura.Size = new System.Drawing.Size(643, 242);

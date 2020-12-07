@@ -8,12 +8,17 @@ namespace Entidades
 {
     public class Producto
     {
-        public decimal PrecioUnitario { get; set; }
-        public int CantidadExistencias { get; set; }
-        public string NombreProducto { get; set; }
-        public string TallaProducto { get; set; }
         public string CodigoProducto { get; set; }
+        public string NombreProducto { get; set; }
         public string Estado { get; set; }
+        public string TallaProducto { get; set; }
+        public int CantidadExistencias { get; set; }
+        public decimal PrecioUnitario { get; set; }
+        
+        
+       
+        
+       
 
         public Producto()
         {

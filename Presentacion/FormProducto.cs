@@ -16,11 +16,14 @@ namespace Presentacion
     {
         ProductoService productoService;
         Producto producto;
+        List<Producto> productos;
 
         public FormProducto()
         {
-            InitializeComponent();
             productoService = new ProductoService(ConfigConnection.ConnectionString);
+            InitializeComponent();
+            productos = new List<Producto>();
+            ActualizarTabla();
         }
 
         private void btnCerrar_Click_1(object sender, EventArgs e)
@@ -98,6 +101,7 @@ namespace Presentacion
                 Producto producto = MapearProducto();
                 string mensaje = productoService.Modificar(producto);
             }
+            ActualizarTabla();
         }
 
         private void btnAñadir_Click(object sender, EventArgs e)
@@ -106,6 +110,18 @@ namespace Presentacion
             string mensaje = productoService.Guardar(producto);
             MessageBox.Show(mensaje, "Mensaje de Guardado", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             Limpiar();
+            ActualizarTabla();
+        }
+
+        public void ActualizarTabla()
+        {
+            ConsultaProductoRespuesta respuesta = new ConsultaProductoRespuesta();
+
+            TablaProducto.DataSource = null;
+            respuesta = productoService.ConsultarTodos();
+            productos = respuesta.Productos.ToList();
+            TablaProducto.DataSource = respuesta.Productos;
+            
         }
     }
 }

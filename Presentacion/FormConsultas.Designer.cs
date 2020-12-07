@@ -49,7 +49,9 @@
             // 
             this.dataGridListaFactura.AllowUserToAddRows = false;
             this.dataGridListaFactura.AllowUserToDeleteRows = false;
+            this.dataGridListaFactura.BackgroundColor = System.Drawing.Color.White;
             this.dataGridListaFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridListaFactura.GridColor = System.Drawing.Color.White;
             this.dataGridListaFactura.Location = new System.Drawing.Point(62, 67);
             this.dataGridListaFactura.Name = "dataGridListaFactura";
             this.dataGridListaFactura.ReadOnly = true;
@@ -116,7 +118,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.Color.White;
             this.dataGridView1.Location = new System.Drawing.Point(62, 311);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(673, 199);

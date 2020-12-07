@@ -43,11 +43,11 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnAñadir = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TablaProducto = new System.Windows.Forms.DataGridView();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.cbmEstado = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TablaProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTalla
@@ -205,13 +205,18 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
-            // dataGridView1
+            // TablaProducto
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(292, 120);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(468, 366);
-            this.dataGridView1.TabIndex = 40;
+            this.TablaProducto.AllowUserToAddRows = false;
+            this.TablaProducto.AllowUserToDeleteRows = false;
+            this.TablaProducto.BackgroundColor = System.Drawing.Color.White;
+            this.TablaProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TablaProducto.GridColor = System.Drawing.Color.White;
+            this.TablaProducto.Location = new System.Drawing.Point(292, 120);
+            this.TablaProducto.Name = "TablaProducto";
+            this.TablaProducto.ReadOnly = true;
+            this.TablaProducto.Size = new System.Drawing.Size(468, 366);
+            this.TablaProducto.TabIndex = 40;
             // 
             // btnConsultar
             // 
@@ -259,7 +264,7 @@
             this.Controls.Add(this.cbmEstado);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnConsultar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.TablaProducto);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnLimpiar);
@@ -276,7 +281,7 @@
             this.Controls.Add(this.labelCodigo);
             this.Name = "FormProducto";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TablaProducto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,7 +302,7 @@
         public System.Windows.Forms.TextBox txtCantidad;
         public System.Windows.Forms.TextBox txtPrecio;
         public System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView TablaProducto;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbmEstado;
