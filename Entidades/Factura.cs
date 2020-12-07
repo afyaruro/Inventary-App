@@ -8,48 +8,42 @@ namespace Entidades
 {
     class Factura
     {
-        public int DiaFactura { get; set; }
-        public int MesFactura { get; set; }
-        public int AñoFactura { get; set; }
+        public DateTime Fecha { get; set; }
         public string NumeroFactura { get; set; }
         public decimal TotalFactura { get; set; }
         public List<Detalle_Factura> DetalleFactura { get; set; }
         public Cliente cliente { get; set; }
+        
 
         public Factura()
         {
 
         }
-        public Factura(int dia, int mes, int año, string numeroFactura, Cliente client)
+        public Factura(string numeroFactura, Cliente client, DateTime fecha)
         {
-            this.AñoFactura = año;
-            this.DiaFactura = dia;
-            this.MesFactura = mes;
+            this.Fecha = fecha;
             this.NumeroFactura = numeroFactura;
             this.DetalleFactura = new List<Detalle_Factura>();
             this.cliente = client;
+            
 
         }
 
-        public decimal CalcularTotal()
+        public void CalcularTotal()
         {
-            
-            foreach (var detalle in this.DetalleFactura)
-            {
 
-                this.TotalFactura = this.TotalFactura + detalle.ValorSubtotal;
-                    
-            }
-            return this.TotalFactura;
+            TotalFactura = DetalleFactura.Sum(p => p.ValorSubtotal);
 
         } 
-        public void AñadirDetalleFactura(Detalle_Factura detalleFactura)
+        public void AñadirDetalleFactura(int cantidadProductosFacturados, Producto producto)
         {
-                this.DetalleFactura.Add(detalleFactura);
+            Detalle_Factura detalle_Factura = new Detalle_Factura(cantidadProductosFacturados, producto);
+                this.DetalleFactura.Add(detalle_Factura);
         }
-        public void EliminarDetalleFactura(Detalle_Factura detalleFactura)
+        public void EliminarDetalleFactura(string codigo)
         {
-            this.DetalleFactura.Remove(detalleFactura);
+            var detalle = BuscarDetalleFactura(codigo);
+            this.DetalleFactura.Remove(detalle);
         }
 
         public Detalle_Factura BuscarDetalleFactura(string codigo)

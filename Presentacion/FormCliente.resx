@@ -142,13 +142,12 @@
         0ouaTXEYpRfG5jg8ZLc4eL/ftDi8JCO8CcfFNznpSSlfc6B6KfqP5rcAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnDesactivar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnBuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAMlJREFUSEvt
-        klENAjEQBSsBCUhBAo7AARaQgANwAA6QAjvhHnkpew0N90cnmaS3vb729loG/8sqPIT3ScbUFuMWPirP
-        4SJswjpcMvcz+zALR+Ycnr11jHev4TzbMAtH5oQOcg0JRsbU6oN8kP0Dag6Beo9ghVPzr0pZh6dQ4cep
-        VuObfB3eg7cF1a4m9JkrqUWSmt8iD+fk3q7ZTWiFh2bqB+oyqC2oTfwyvGndnlp9CWv8tIzTcLiEWVgm
-        73aTBbXsJgtpORhAKU/YEH/x62PcQwAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAJ5JREFUSEvd
+        ktsJhTAQBVOCJViSnWlnWoKd6A4YEFnJ2YT44cDAJd7sM+nXjOZsruZxyW/O+NbEYuagb5Kois30AnrS
+        UQil8qfckWCuXgBFaSc11WelLiKzfyrtwrsYsYh3KWKRlhHtZpHuS+7+TKGmC6n6O9Fd8EQHM4TSCf/J
+        xVQlYa73IMhr4SzPnKBNSRQ+TzJx0AOSdAv+W1I6AQV40u3u+evZAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

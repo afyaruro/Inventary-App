@@ -13,19 +13,21 @@ namespace Entidades
         public string NombreProducto { get; set; }
         public string TallaProducto { get; set; }
         public string CodigoProducto { get; set; }
+        public string Estado { get; set; }
 
         public Producto()
         {
 
         }
 
-        public Producto(decimal precioUnitario, int cantidadExistencias, string nombreProducto, string tallaProducto, string codigoProducto)
+        public Producto(decimal precioUnitario, int cantidadExistencias, string nombreProducto, string tallaProducto, string codigoProducto, string estado)
         {
             this.PrecioUnitario = precioUnitario;
             this.CantidadExistencias = cantidadExistencias;
             this.NombreProducto = nombreProducto;
             this.TallaProducto = tallaProducto;
             this.CodigoProducto = codigoProducto;
+            this.Estado = estado;
         }
 
         public void AgregarExistencias(int cantidad)

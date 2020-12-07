@@ -22,7 +22,10 @@ namespace Presentacion
             this.Close();
         }
 
+        private void FormConsultas_Load(object sender, EventArgs e)
+        {
 
-       
+        }
+
     }
 }
