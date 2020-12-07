@@ -41,11 +41,11 @@
             this.btnAñadir = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tablaCliente = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lbEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCerrar
@@ -192,15 +192,15 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // dataGridView1
+            // tablaCliente
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(328, 79);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(432, 385);
-            this.dataGridView1.TabIndex = 35;
+            this.tablaCliente.BackgroundColor = System.Drawing.Color.White;
+            this.tablaCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaCliente.GridColor = System.Drawing.Color.White;
+            this.tablaCliente.Location = new System.Drawing.Point(328, 79);
+            this.tablaCliente.Name = "tablaCliente";
+            this.tablaCliente.Size = new System.Drawing.Size(432, 385);
+            this.tablaCliente.TabIndex = 35;
             // 
             // btnBuscar
             // 
@@ -246,7 +246,7 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lbEmail);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.tablaCliente);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnAñadir);
@@ -261,7 +261,7 @@
             this.Controls.Add(this.btnCerrar);
             this.Name = "FormCliente";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,7 +281,7 @@
         public System.Windows.Forms.TextBox txtApellido;
         public System.Windows.Forms.TextBox txtCelular;
         public System.Windows.Forms.TextBox txtCedula;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tablaCliente;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.TextBox txtEmail;

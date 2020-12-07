@@ -16,10 +16,13 @@ namespace Presentacion
     {
         ClienteService Service;
         Cliente cliente;
+        List<Cliente> clientes;
         public FormCliente()
         {
+            Service = new ClienteService(ConfigConnection.ConnectionString);
             InitializeComponent();
-            // Service = new ClienteService(ConfigConnection.ConnectionString);
+            clientes = new List<Cliente>();
+            ActualizarTabla();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -29,7 +32,13 @@ namespace Presentacion
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            
+            var respuesta = MessageBox.Show("Está seguro de Modificar la información", "Mensaje de Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (respuesta == DialogResult.Yes)
+            {
+                Cliente cliente = MapearCliente();
+                string mensaje = Service.Modificar(cliente);
+            }
+            ActualizarTabla();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -39,7 +48,32 @@ namespace Presentacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            
+            BusquedaClienteRespuesta respuesta = new BusquedaClienteRespuesta();
+            string cedula = txtCedula.Text;
+            if (cedula != "")
+            {
+                respuesta = Service.BuscarxCedula(cedula);
+
+                if (respuesta.Cliente != null)
+                {
+                    txtCedula.Text = respuesta.Cliente.CedulaCliente;
+                    txtNombre.Text = respuesta.Cliente.NombreCliente;
+                    txtApellido.Text = respuesta.Cliente.ApellidoCliente;
+                    txtCelular.Text = respuesta.Cliente.CelularCliente;
+                    txtEmail.Text = respuesta.Cliente.Email;
+                    
+                    MessageBox.Show(respuesta.Mensaje, "Busqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(respuesta.Mensaje, "Busqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Por favor digite un numero de Cedula", "Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         public void Limpiar()
         {
@@ -53,9 +87,21 @@ namespace Presentacion
         private void btnAñadir_Click(object sender, EventArgs e)
         {
             Cliente cliente = MapearCliente();
-          //  string mensaje = Service.Guardar(cliente);
-          //  MessageBox.Show(mensaje, "Mensaje de Guardado", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            string mensaje = Service.Guardar(cliente);
+            MessageBox.Show(mensaje, "Mensaje de Guardado", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             Limpiar();
+            ActualizarTabla();
+        }
+
+        public void ActualizarTabla()
+        {
+            ConsultaClienteRespuesta respuesta = new ConsultaClienteRespuesta();
+
+            tablaCliente.DataSource = null;
+            respuesta = Service.ConsultarTodos();
+            clientes = respuesta.Clientes.ToList();
+            tablaCliente.DataSource = respuesta.Clientes;
+
         }
 
         private Cliente MapearCliente()

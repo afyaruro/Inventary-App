@@ -34,9 +34,9 @@ namespace Logica
             finally { conexion.Close(); }
         }
 
-        public ConsultaRespuesta ConsultarTodos()
+        public ConsultaProductoRespuesta ConsultarTodos()
         {
-            ConsultaRespuesta respuesta = new ConsultaRespuesta();
+            ConsultaProductoRespuesta respuesta = new ConsultaProductoRespuesta();
             try
             {
 
@@ -57,9 +57,9 @@ namespace Logica
 
         }
 
-        public BusquedaRespuesta BuscarxCodigo(string codigo)
+        public BusquedaProductoRespuesta BuscarxCodigo(string codigo)
         {
-            BusquedaRespuesta respuesta = new BusquedaRespuesta();
+            BusquedaProductoRespuesta respuesta = new BusquedaProductoRespuesta();
             try
             {
                 conexion.Open();
@@ -106,7 +106,7 @@ namespace Logica
 
     }
 
-    public class ConsultaRespuesta
+    public class ConsultaProductoRespuesta
     {
         public bool Error { get; set; }
         public string Mensaje { get; set; }
@@ -114,7 +114,7 @@ namespace Logica
     }
 
 
-    public class BusquedaRespuesta
+    public class BusquedaProductoRespuesta
     {
         public bool Error { get; set; }
         public string Mensaje { get; set; }

@@ -82,7 +82,7 @@ namespace Datos
         {
             using (var command = _conection.CreateCommand())
             {
-                command.CommandText = @"update Producto set Nombre=@Nombre,Cantidad=@Cantidad, Talla=@Talla, Precio= @Precio 
+                command.CommandText = @"update Producto set Nombre=@Nombre, Estado=@Estado, Cantidad=@Cantidad, Talla=@Talla, Precio= @Precio 
                                         where Codigo=@Codigo";
                 command.Parameters.AddWithValue("@Codigo", producto.CodigoProducto);
                 command.Parameters.AddWithValue("@Nombre", producto.NombreProducto);
@@ -106,6 +106,8 @@ namespace Datos
             producto.PrecioUnitario = (decimal)dataReader["Precio"];
             return producto;
         }
+
+        
     }
 
 }
