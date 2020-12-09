@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteService.cs" />
-    <Compile Include="DetalleService.cs" />
     <Compile Include="FacturaService.cs" />
     <Compile Include="ProductoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

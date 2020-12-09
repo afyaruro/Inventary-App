@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCrearFactura));
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnTotal = new System.Windows.Forms.Button();
             this.dataGridFactura = new System.Windows.Forms.DataGridView();
             this.labelNumeroFactura = new System.Windows.Forms.Label();
             this.labelFecha = new System.Windows.Forms.Label();
@@ -54,14 +53,17 @@
             this.labelFacturacion = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.Fecha = new System.Windows.Forms.DateTimePicker();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtCelular = new System.Windows.Forms.TextBox();
+            this.txtNombreProducto = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtTalla = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnTotal = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFactura)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,21 +80,7 @@
             this.btnGuardar.TabIndex = 53;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
-            // 
-            // btnTotal
-            // 
-            this.btnTotal.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTotal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTotal.ForeColor = System.Drawing.Color.Black;
-            this.btnTotal.Image = ((System.Drawing.Image)(resources.GetObject("btnTotal.Image")));
-            this.btnTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTotal.Location = new System.Drawing.Point(242, 513);
-            this.btnTotal.Name = "btnTotal";
-            this.btnTotal.Size = new System.Drawing.Size(140, 39);
-            this.btnTotal.TabIndex = 52;
-            this.btnTotal.Text = "Calcular Total";
-            this.btnTotal.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // dataGridFactura
             // 
@@ -230,7 +218,7 @@
             this.labelApellido.AutoSize = true;
             this.labelApellido.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelApellido.ForeColor = System.Drawing.Color.Black;
-            this.labelApellido.Location = new System.Drawing.Point(328, 103);
+            this.labelApellido.Location = new System.Drawing.Point(348, 106);
             this.labelApellido.Name = "labelApellido";
             this.labelApellido.Size = new System.Drawing.Size(54, 16);
             this.labelApellido.TabIndex = 69;
@@ -260,6 +248,7 @@
             this.btnAñadir.TabIndex = 74;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = true;
+            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
             // btnEliminar
             // 
@@ -293,6 +282,7 @@
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(100, 22);
             this.txtCedula.TabIndex = 76;
+            this.txtCedula.TextChanged += new System.EventHandler(this.txtCedula_TextChanged);
             // 
             // txtCodigo
             // 
@@ -301,6 +291,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 22);
             this.txtCodigo.TabIndex = 77;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // txtNumeroFactura
             // 
@@ -336,83 +327,116 @@
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Enabled = false;
             this.txtCantidad.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidad.Location = new System.Drawing.Point(253, 167);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(36, 22);
             this.txtCantidad.TabIndex = 93;
             // 
-            // dateTimePicker1
+            // Fecha
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(377, 50);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(239, 22);
-            this.dateTimePicker1.TabIndex = 94;
+            this.Fecha.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Fecha.Location = new System.Drawing.Point(377, 50);
+            this.Fecha.Name = "Fecha";
+            this.Fecha.Size = new System.Drawing.Size(239, 22);
+            this.Fecha.TabIndex = 94;
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(242, 103);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 95;
+            this.txtNombre.Enabled = false;
+            this.txtNombre.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(242, 103);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 22);
+            this.txtNombre.TabIndex = 95;
             // 
-            // textBox2
+            // txtApellido
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(408, 102);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 96;
+            this.txtApellido.Enabled = false;
+            this.txtApellido.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellido.Location = new System.Drawing.Point(408, 102);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(100, 22);
+            this.txtApellido.TabIndex = 96;
             // 
-            // textBox3
+            // txtCelular
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(574, 102);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 97;
+            this.txtCelular.Enabled = false;
+            this.txtCelular.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCelular.Location = new System.Drawing.Point(574, 102);
+            this.txtCelular.Name = "txtCelular";
+            this.txtCelular.Size = new System.Drawing.Size(100, 22);
+            this.txtCelular.TabIndex = 97;
             // 
-            // textBox4
+            // txtNombreProducto
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(351, 167);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 98;
+            this.txtNombreProducto.Enabled = false;
+            this.txtNombreProducto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreProducto.Location = new System.Drawing.Point(351, 167);
+            this.txtNombreProducto.Name = "txtNombreProducto";
+            this.txtNombreProducto.Size = new System.Drawing.Size(100, 22);
+            this.txtNombreProducto.TabIndex = 98;
             // 
-            // textBox5
+            // txtPrecio
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(637, 167);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 99;
+            this.txtPrecio.Enabled = false;
+            this.txtPrecio.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio.Location = new System.Drawing.Point(637, 167);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(100, 22);
+            this.txtPrecio.TabIndex = 99;
             // 
-            // textBox6
+            // txtTalla
             // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(497, 167);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(33, 22);
-            this.textBox6.TabIndex = 100;
+            this.txtTalla.Enabled = false;
+            this.txtTalla.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTalla.Location = new System.Drawing.Point(497, 167);
+            this.txtTalla.Name = "txtTalla";
+            this.txtTalla.Size = new System.Drawing.Size(33, 22);
+            this.txtTalla.TabIndex = 100;
             // 
-            // textBox7
+            // txtTotal
             // 
-            this.textBox7.Enabled = false;
-            this.textBox7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(100, 521);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
-            this.textBox7.TabIndex = 101;
+            this.txtTotal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(100, 521);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(100, 22);
+            this.txtTotal.TabIndex = 101;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Location = new System.Drawing.Point(546, 516);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(103, 34);
+            this.btnLimpiar.TabIndex = 102;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Location = new System.Drawing.Point(223, 18);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.TabIndex = 103;
+            this.btnActualizar.Text = "Actualizar #";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // btnTotal
+            // 
+            this.btnTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTotal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTotal.Location = new System.Drawing.Point(223, 517);
+            this.btnTotal.Name = "btnTotal";
+            this.btnTotal.Size = new System.Drawing.Size(103, 34);
+            this.btnTotal.TabIndex = 104;
+            this.btnTotal.Text = "Calcular Total";
+            this.btnTotal.UseVisualStyleBackColor = true;
+            this.btnTotal.Click += new System.EventHandler(this.btnTotal_Click);
             // 
             // FormCrearFactura
             // 
@@ -420,14 +444,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(783, 561);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.btnTotal);
+            this.Controls.Add(this.btnActualizar);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.txtTalla);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.txtNombreProducto);
+            this.Controls.Add(this.txtCelular);
+            this.Controls.Add(this.txtApellido);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.Fecha);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.labelFacturacion);
@@ -452,12 +479,12 @@
             this.Controls.Add(this.labelNumeroFactura);
             this.Controls.Add(this.dataGridFactura);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.btnTotal);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCrearFactura";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Factura";
+            this.Load += new System.EventHandler(this.FormCrearFactura_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFactura)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -467,7 +494,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnTotal;
         private System.Windows.Forms.DataGridView dataGridFactura;
         private System.Windows.Forms.Label labelNumeroFactura;
         private System.Windows.Forms.Label labelFecha;
@@ -491,13 +517,16 @@
         public System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.TextBox txtCantidad;
         public System.Windows.Forms.TextBox txtNumeroFactura;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        public System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.DateTimePicker Fecha;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtCelular;
+        private System.Windows.Forms.TextBox txtNombreProducto;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtTalla;
+        public System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnTotal;
     }
 }

@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConsultas));
-            this.dataGridListaFactura = new System.Windows.Forms.DataGridView();
+            this.ListaFactura = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtNumeroFacura = new System.Windows.Forms.TextBox();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
             this.labelNumeroFactura = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridListaFactura)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListaFactura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridListaFactura
+            // ListaFactura
             // 
-            this.dataGridListaFactura.AllowUserToAddRows = false;
-            this.dataGridListaFactura.AllowUserToDeleteRows = false;
-            this.dataGridListaFactura.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridListaFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridListaFactura.GridColor = System.Drawing.Color.White;
-            this.dataGridListaFactura.Location = new System.Drawing.Point(62, 67);
-            this.dataGridListaFactura.Name = "dataGridListaFactura";
-            this.dataGridListaFactura.ReadOnly = true;
-            this.dataGridListaFactura.Size = new System.Drawing.Size(673, 213);
-            this.dataGridListaFactura.TabIndex = 0;
+            this.ListaFactura.AllowUserToAddRows = false;
+            this.ListaFactura.AllowUserToDeleteRows = false;
+            this.ListaFactura.BackgroundColor = System.Drawing.Color.White;
+            this.ListaFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ListaFactura.GridColor = System.Drawing.Color.White;
+            this.ListaFactura.Location = new System.Drawing.Point(62, 67);
+            this.ListaFactura.Name = "ListaFactura";
+            this.ListaFactura.ReadOnly = true;
+            this.ListaFactura.Size = new System.Drawing.Size(673, 213);
+            this.ListaFactura.TabIndex = 0;
             // 
             // btnBuscar
             // 
@@ -72,14 +72,15 @@
             this.btnBuscar.TabIndex = 45;
             this.btnBuscar.Text = "Consultar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // txtNumeroFacura
+            // txtFiltro
             // 
-            this.txtNumeroFacura.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroFacura.Location = new System.Drawing.Point(287, 12);
-            this.txtNumeroFacura.Name = "txtNumeroFacura";
-            this.txtNumeroFacura.Size = new System.Drawing.Size(180, 22);
-            this.txtNumeroFacura.TabIndex = 44;
+            this.txtFiltro.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltro.Location = new System.Drawing.Point(287, 12);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(180, 22);
+            this.txtFiltro.TabIndex = 44;
             // 
             // labelNumeroFactura
             // 
@@ -104,17 +105,17 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // comboBox1
+            // cmbFiltro
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Numero Factura",
-            "Valor de Compra"});
-            this.comboBox1.Location = new System.Drawing.Point(287, 40);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(180, 24);
-            this.comboBox1.TabIndex = 51;
+            this.cmbFiltro.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFiltro.FormattingEnabled = true;
+            this.cmbFiltro.Items.AddRange(new object[] {
+            "Todos",
+            "Numero Factura"});
+            this.cmbFiltro.Location = new System.Drawing.Point(287, 40);
+            this.cmbFiltro.Name = "cmbFiltro";
+            this.cmbFiltro.Size = new System.Drawing.Size(180, 24);
+            this.cmbFiltro.TabIndex = 51;
             // 
             // dataGridView1
             // 
@@ -184,16 +185,16 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbFiltro);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.txtNumeroFacura);
+            this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.labelNumeroFactura);
-            this.Controls.Add(this.dataGridListaFactura);
+            this.Controls.Add(this.ListaFactura);
             this.Name = "FormConsultas";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormConsultas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridListaFactura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListaFactura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -202,12 +203,12 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridListaFactura;
+        private System.Windows.Forms.DataGridView ListaFactura;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label labelNumeroFactura;
         private System.Windows.Forms.Button btnCerrar;
-        public System.Windows.Forms.TextBox txtNumeroFacura;
-        private System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.ComboBox cmbFiltro;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

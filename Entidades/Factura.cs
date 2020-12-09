@@ -18,7 +18,8 @@ namespace Entidades
 
         public Factura()
         {
-
+            this.cliente = new Cliente();
+            this.TotalFactura = 0;
         }
         public Factura(Cliente client, DateTime fecha)
         {
@@ -29,16 +30,20 @@ namespace Entidades
 
         }
 
-        public void CalcularTotal()
+        public decimal CalcularTotal()
         {
+            foreach (var item in DetalleFactura)
+            {
+                TotalFactura = TotalFactura + item.ValorSubtotal;
+            }
 
-            TotalFactura = DetalleFactura.Sum(p => p.ValorSubtotal);
+            return TotalFactura;
 
         } 
         public void AñadirDetalleFactura(int cantidadProductosFacturados, Producto producto)
         {
             Detalle_Factura detalle_Factura = new Detalle_Factura(cantidadProductosFacturados, producto);
-                this.DetalleFactura.Add(detalle_Factura);
+            this.DetalleFactura.Add(detalle_Factura);
         }
         public void EliminarDetalleFactura(string codigo)
         {
@@ -58,12 +63,6 @@ namespace Entidades
             return null;
         }
 
-        public void GenerarNumeroFactura()
-        {
-            Random random = new Random();
-            var values = random.Next(5000);
-            string NFactura = Convert.ToString(values);
-            this.NumeroFactura = NFactura;
-        }
+        
     }
 }

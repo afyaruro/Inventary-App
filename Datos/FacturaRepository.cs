@@ -17,7 +17,7 @@ namespace Datos
             _conection = connection._conexion;
         }
 
-        public void Guardar(Factura factura)
+        public void GuardarFactura(Factura factura)
         {
             using (var commando = _conection.CreateCommand())
             {
@@ -26,7 +26,7 @@ namespace Datos
 
                 commando.Parameters.AddWithValue("@NumeroFactura", factura.NumeroFactura);
                 commando.Parameters.AddWithValue("@TotalFactura", factura.TotalFactura);
-                commando.Parameters.AddWithValue("@Fecha", factura.Fecha);
+                commando.Parameters.AddWithValue("@Fecha", factura.Fecha.ToString("dd/MM/yyyy"));
                 commando.Parameters.AddWithValue("@CedulaCliente", factura.cliente.CedulaCliente);
                 commando.ExecuteNonQuery();
 
