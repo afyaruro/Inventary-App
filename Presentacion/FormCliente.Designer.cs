@@ -45,6 +45,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lbEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.btnPdf = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -237,12 +238,25 @@
             this.txtEmail.Size = new System.Drawing.Size(155, 22);
             this.txtEmail.TabIndex = 38;
             // 
+            // btnPdf
+            // 
+            this.btnPdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPdf.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPdf.Location = new System.Drawing.Point(629, 42);
+            this.btnPdf.Name = "btnPdf";
+            this.btnPdf.Size = new System.Drawing.Size(92, 31);
+            this.btnPdf.TabIndex = 39;
+            this.btnPdf.Text = "Generar Pdf";
+            this.btnPdf.UseVisualStyleBackColor = true;
+            this.btnPdf.Click += new System.EventHandler(this.btnPdf_Click);
+            // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(783, 561);
+            this.Controls.Add(this.btnPdf);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lbEmail);
             this.Controls.Add(this.btnBuscar);
@@ -285,5 +299,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Button btnPdf;
     }
 }

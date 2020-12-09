@@ -7,6 +7,7 @@ using Datos;
 using Entidades;
 using Infraestructur;
 
+
 namespace Logica
 {
     public class ClienteService
@@ -20,6 +21,7 @@ namespace Logica
             repositorio = new ClienteRepository(conexion);
             
         }
+
 
         public string Guardar(Cliente cliente)
         {
@@ -42,6 +44,8 @@ namespace Logica
             }
             finally { conexion.Close(); }
         }
+
+        
 
         public ConsultaClienteRespuesta ConsultarTodos()
         {
@@ -112,8 +116,42 @@ namespace Logica
 
         }
 
+        public string GenerarPdf(List<Cliente> clientes, string filename, string cedula)
+        {
+            Email email = new Email();
+            string mensajeEmail = string.Empty;
+            DocumentoPdf documentoPdf = new DocumentoPdf();
+            try
+            {
 
+                documentoPdf.GuadarPdf(clientes, filename);
+                email.RutaAyunto = filename;
+                Cliente cliente = new Cliente(); 
+                cliente = BuscarCliente(clientes, cedula);
+                mensajeEmail = email.EnviarEmail(cliente);
+                return "Se Genero el Documento Correctamente";
+            }
+            catch (Exception e)
+            {
+                return "Error al crear Documento" + e.Message;
+            }
+        }
+
+        public Cliente BuscarCliente(List<Cliente> clientes, string cedula)
+        {
+            foreach (var cliente in clientes)
+            {
+                if (cliente.CedulaCliente == cedula)
+                {
+                    return cliente;
+                }
+            }
+            return null;
+        }
     }
+
+    
+
     public class ConsultaClienteRespuesta
     {
         public bool Error { get; set; }

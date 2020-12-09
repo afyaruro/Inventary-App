@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Factura
+    public class Factura
     {
-        public DateTime Fecha { get; set; }
+        
         public string NumeroFactura { get; set; }
         public decimal TotalFactura { get; set; }
         public List<Detalle_Factura> DetalleFactura { get; set; }
         public Cliente cliente { get; set; }
-        
+        public DateTime Fecha { get; set; }
+
 
         public Factura()
         {
 
         }
-        public Factura(string numeroFactura, Cliente client, DateTime fecha)
+        public Factura(Cliente client, DateTime fecha)
         {
             this.Fecha = fecha;
-            this.NumeroFactura = numeroFactura;
             this.DetalleFactura = new List<Detalle_Factura>();
             this.cliente = client;
             
@@ -56,6 +56,14 @@ namespace Entidades
                 }
             }
             return null;
+        }
+
+        public void GenerarNumeroFactura()
+        {
+            Random random = new Random();
+            var values = random.Next(5000);
+            string NFactura = Convert.ToString(values);
+            this.NumeroFactura = NFactura;
         }
     }
 }

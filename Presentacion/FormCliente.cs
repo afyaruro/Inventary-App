@@ -17,6 +17,7 @@ namespace Presentacion
         ClienteService Service;
         Cliente cliente;
         List<Cliente> clientes;
+
         public FormCliente()
         {
             Service = new ClienteService(ConfigConnection.ConnectionString);
@@ -116,6 +117,54 @@ namespace Presentacion
 
             return cliente;
 
+        }
+
+        public void Pdf()
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Guardar Informe de Clientes";
+            saveFileDialog.InitialDirectory = @"C:/document";
+            saveFileDialog.DefaultExt = "pdf";
+            string filename = "";
+            ValidarCedula(saveFileDialog, filename);
+            
+        }
+
+        public void ValidarCedula(SaveFileDialog saveFileDialog, string filename)
+        {
+            if (txtCedula.Text == "")
+            {
+                MessageBox.Show("Por favor Ingrese un numero de Cedula");
+            }
+            else
+            {
+                GenerarPdf(saveFileDialog, filename);
+            }
+            
+        }
+
+        public void GenerarPdf(SaveFileDialog saveFileDialog, string filename)
+        {
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                filename = saveFileDialog.FileName;
+                if (filename != "" && clientes.Count > 0)
+                {
+                    string mensaje = Service.GenerarPdf(clientes, filename, txtCedula.Text);
+                    MessageBox.Show(mensaje);
+                }
+                else
+                {
+                    MessageBox.Show("No se especifico una ruta o no hay datos para generar el reporte", "generar pdf", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+
+            }
+        }
+
+        private void btnPdf_Click(object sender, EventArgs e)
+        {
+            Pdf();
         }
     }
 }

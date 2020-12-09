@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Detalle_Factura
+    public class Detalle_Factura
     {
+        public string idDetalle { get; set; }
         public int CantidadProductosFacturados { get; set; }
 
         public decimal ValorSubtotal { get; set; }

@@ -13,6 +13,7 @@ namespace Infraestructur
     {
         private MailMessage email;
         private SmtpClient smtp;
+        public string RutaAyunto { get; set; }
         public Email()
         {
             smtp = new SmtpClient();
@@ -33,6 +34,7 @@ namespace Infraestructur
                 + DateTime.Now.ToString("dd/MMM/yyy hh:mm:ss");
             email.Body = $"<b>Sr {cliente.NombreCliente} {cliente.ApellidoCliente}</b> <br " +
                 $" > se ha realizado su registro Sartisfactoriamente";
+            email.Attachments.Add(new Attachment(RutaAyunto));
             email.IsBodyHtml = true;
             email.Priority = MailPriority.Normal;
         }
@@ -55,7 +57,6 @@ namespace Infraestructur
                 email.Dispose();
             }
         }
-
 
     }
 }

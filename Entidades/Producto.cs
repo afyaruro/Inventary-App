@@ -40,9 +40,19 @@ namespace Entidades
             this.CantidadExistencias = this.CantidadExistencias + cantidad;
         }
 
-        public void DescontarExistencias(int cantidad)
+        public string DescontarExistencias(int cantidad)
         {
-            this.CantidadExistencias = this.CantidadExistencias - cantidad;
+            int Nuevacantidad = this.CantidadExistencias - cantidad;
+
+            if (Nuevacantidad >= 0)
+            {
+                this.CantidadExistencias = Nuevacantidad;
+                return "se descontaron las unidades correctamente";
+            }
+            else
+            {
+                return "No se Pueden descontar mas unidades";
+            }
         }
 
     }
