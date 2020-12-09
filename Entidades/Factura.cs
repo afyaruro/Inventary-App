@@ -8,7 +8,7 @@ namespace Entidades
 {
     public class Factura
     {
-        
+
         public string NumeroFactura { get; set; }
         public decimal TotalFactura { get; set; }
         public List<Detalle_Factura> DetalleFactura { get; set; }
@@ -18,32 +18,33 @@ namespace Entidades
 
         public Factura()
         {
+            this.DetalleFactura = new List<Detalle_Factura>();
             this.cliente = new Cliente();
             this.TotalFactura = 0;
         }
-        public Factura(Cliente client, DateTime fecha)
-        {
-            this.Fecha = fecha;
-            this.DetalleFactura = new List<Detalle_Factura>();
-            this.cliente = client;
-            
+        
 
-        }
-
-        public decimal CalcularTotal()
+        public string CalcularTotal()
         {
-            foreach (var item in DetalleFactura)
+            if (DetalleFactura != null)
             {
-                TotalFactura = TotalFactura + item.ValorSubtotal;
+                foreach (var item in DetalleFactura)
+                {
+                    TotalFactura = TotalFactura + item.ValorSubtotal;
+                }
+
+                return "Se calculo el total Correctamente";
             }
-
-            return TotalFactura;
-
+            else
+            {
+                return "No hay detalles de factura";
+            }
+            
         } 
-        public void AñadirDetalleFactura(int cantidadProductosFacturados, Producto producto)
+        public void AñadirDetalleFactura(int cantidad, Producto producto)
         {
-            Detalle_Factura detalle_Factura = new Detalle_Factura(cantidadProductosFacturados, producto);
-            this.DetalleFactura.Add(detalle_Factura);
+            Detalle_Factura detalle_ = new Detalle_Factura();
+            this.DetalleFactura.Add(detalle_);
         }
         public void EliminarDetalleFactura(string codigo)
         {

@@ -26,9 +26,8 @@ namespace Presentacion
             productoService = new ProductoService(ConfigConnection.ConnectionString);
             clienteService = new ClienteService(ConfigConnection.ConnectionString);
             facturas = new List<Factura>();
-            
             InitializeComponent();
-            
+            factura = new Factura();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -46,7 +45,7 @@ namespace Presentacion
         }
         private Factura MapearFactura()
         {
-            factura = new Factura();
+            
             factura.NumeroFactura = txtNumeroFactura.Text;
             factura.TotalFactura = decimal.Parse(txtTotal.Text);
             factura.Fecha = DateTime.Parse(this.Fecha.Text);
@@ -76,14 +75,15 @@ namespace Presentacion
 
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            int cantidadProductosaFacturar = int.Parse(txtCantidad.Text);
+            int cantidad = int.Parse(txtCantidad.Text);
             BusquedaProductoRespuesta respuesta = new BusquedaProductoRespuesta();
             string codigo = txtCodigo.Text;
             if (codigo != "")
             {
                 respuesta = productoService.BuscarxCodigo(codigo);
-                factura.AñadirDetalleFactura(cantidadProductosaFacturar, respuesta.Producto);
-                Limpiar();
+                factura.AñadirDetalleFactura(cantidad, respuesta.Producto);
+                MessageBox.Show("Se añadio Correctamente el Producto");
+
             }
         }
 
@@ -105,12 +105,6 @@ namespace Presentacion
                 
             }
 
-            else
-            {
-                MessageBox.Show("ingrese un numero de Cedula de un cliente que este registrado...");
-            }
-
-
         }
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
@@ -129,11 +123,6 @@ namespace Presentacion
                     
                 }
                 
-            }
-
-            else
-            {
-                MessageBox.Show("Ingrese Un Codigo de Producto que este registrado...");
             }
 
         }
@@ -163,15 +152,17 @@ namespace Presentacion
 
         private void btnTotal_Click(object sender, EventArgs e)
         {
-            string numeroFactura = txtNumeroFactura.Text;
-            BusquedaFacturaRespuesta facturaRespuesta = new BusquedaFacturaRespuesta();
+            
+        }
 
+        public void ActualizarTablaDetalles()
+        {
+            ConsultaFacturaRespuesta respuesta = new ConsultaFacturaRespuesta();
 
-            facturaRespuesta = facturaService.BuscarxNumero(numeroFactura);
-
-
-
-
+            DetalleFactura.DataSource = null;
+            respuesta = facturaService.ConsultarTodos();
+            productos = respuesta.Productos.ToList();
+            TablaProducto.DataSource = respuesta.Productos;
         }
     }
 }

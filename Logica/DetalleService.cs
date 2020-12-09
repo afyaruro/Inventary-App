@@ -8,24 +8,25 @@ using Entidades;
 
 namespace Logica
 {
-    public class FacturaService
+    public class DetalleService
     {
+
         private readonly ConnectionManager conexion;
-        private readonly FacturaRepository repositorio;
-        public FacturaService(string connectionString)
+        private readonly DetalleRepository repositorio;
+        public DetalleService(string connectionString)
         {
             conexion = new ConnectionManager(connectionString);
-            repositorio = new FacturaRepository(conexion);
+            repositorio = new DetalleRepository(conexion);
         }
 
-        public string GuardarFactura(Factura factura)
+        public string GuardarDetalle(Detalle_Factura detalle)
         {
             try
             {
                 conexion.Open();
-                if (repositorio.BuscarPorNumero(factura.NumeroFactura) == null)
+                if (repositorio.BuscarPorNumero(detalle.idDetalle) == null)
                 {
-                    repositorio.GuardarFactura(factura);
+                    repositorio.GuardarFactura(detalle);
                     return $"Se guardaron los datos satisfactoriamente";
                 }
                 return $"La Factura ya existe";
@@ -37,17 +38,17 @@ namespace Logica
             finally { conexion.Close(); }
         }
 
-        public ConsultaFacturaRespuesta ConsultarTodos()
+        public ConsultaDetalleRespuesta ConsultarTodos()
         {
-            ConsultaFacturaRespuesta respuesta = new ConsultaFacturaRespuesta();
+            ConsultaDetalleRespuesta respuesta = new ConsultaDetalleRespuesta();
             try
             {
 
                 conexion.Open();
-                respuesta.Facturas = repositorio.ConsultarTodos();
+                respuesta.Detalles = repositorio.ConsultarTodos();
                 conexion.Close();
                 respuesta.Error = false;
-                respuesta.Mensaje = (respuesta.Facturas.Count > 0) ? "Se consultan los Datos" : "No hay datos para consultar";
+                respuesta.Mensaje = (respuesta.Detalles.Count > 0) ? "Se consultan los Datos" : "No hay datos para consultar";
                 return respuesta;
             }
             catch (Exception e)
@@ -60,15 +61,15 @@ namespace Logica
 
         }
 
-        public BusquedaFacturaRespuesta BuscarxNumero(string numero)
+        public BusquedaDetalleRespuesta BuscarxNumero(string idDetalle)
         {
-            BusquedaFacturaRespuesta respuesta = new BusquedaFacturaRespuesta();
+            BusquedaDetalleRespuesta respuesta = new BusquedaDetalleRespuesta();
             try
             {
                 conexion.Open();
-                respuesta.Factura = repositorio.BuscarPorNumero(numero);
+                respuesta.detalle = repositorio.BuscarPorNumero(idDetalle);
                 conexion.Close();
-                respuesta.Mensaje = (respuesta.Factura != null) ? "Se encontró El Producto buscado" : "El producto buscado no existe";
+                respuesta.Mensaje = (respuesta.detalle != null) ? "Se encontró El Producto buscado" : "El producto buscado no existe";
                 respuesta.Error = false;
                 return respuesta;
             }
@@ -84,18 +85,18 @@ namespace Logica
 
     }
 
-    public class ConsultaFacturaRespuesta
+    public class ConsultaDetalleRespuesta
     {
         public bool Error { get; set; }
         public string Mensaje { get; set; }
-        public IList<Factura> Facturas { get; set; }
+        public IList<Detalle_Factura> Detalles { get; set; }
     }
 }
 
-    public class BusquedaFacturaRespuesta
-    {
-        public bool Error { get; set; }
-        public string Mensaje { get; set; }
-        public Factura Factura{ get; set; }
-    }
-
+public class BusquedaDetalleRespuesta
+{
+    public bool Error { get; set; }
+    public string Mensaje { get; set; }
+    public Detalle_Factura detalle { get; set; }
+}
+}

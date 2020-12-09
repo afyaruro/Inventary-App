@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCrearFactura));
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.dataGridFactura = new System.Windows.Forms.DataGridView();
+            this.DetalleFactura = new System.Windows.Forms.DataGridView();
             this.labelNumeroFactura = new System.Windows.Forms.Label();
             this.labelFecha = new System.Windows.Forms.Label();
             this.labelProducto = new System.Windows.Forms.Label();
@@ -64,7 +64,7 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnTotal = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridFactura)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DetalleFactura)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGuardar
@@ -82,16 +82,16 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // dataGridFactura
+            // DetalleFactura
             // 
-            this.dataGridFactura.AllowUserToOrderColumns = true;
-            this.dataGridFactura.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridFactura.GridColor = System.Drawing.Color.White;
-            this.dataGridFactura.Location = new System.Drawing.Point(74, 261);
-            this.dataGridFactura.Name = "dataGridFactura";
-            this.dataGridFactura.Size = new System.Drawing.Size(643, 242);
-            this.dataGridFactura.TabIndex = 54;
+            this.DetalleFactura.AllowUserToOrderColumns = true;
+            this.DetalleFactura.BackgroundColor = System.Drawing.Color.White;
+            this.DetalleFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DetalleFactura.GridColor = System.Drawing.Color.White;
+            this.DetalleFactura.Location = new System.Drawing.Point(74, 261);
+            this.DetalleFactura.Name = "DetalleFactura";
+            this.DetalleFactura.Size = new System.Drawing.Size(643, 242);
+            this.DetalleFactura.TabIndex = 54;
             // 
             // labelNumeroFactura
             // 
@@ -477,7 +477,7 @@
             this.Controls.Add(this.labelProducto);
             this.Controls.Add(this.labelFecha);
             this.Controls.Add(this.labelNumeroFactura);
-            this.Controls.Add(this.dataGridFactura);
+            this.Controls.Add(this.DetalleFactura);
             this.Controls.Add(this.btnGuardar);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -485,7 +485,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Factura";
             this.Load += new System.EventHandler(this.FormCrearFactura_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridFactura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DetalleFactura)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -494,7 +494,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.DataGridView dataGridFactura;
+        private System.Windows.Forms.DataGridView DetalleFactura;
         private System.Windows.Forms.Label labelNumeroFactura;
         private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.Label labelProducto;

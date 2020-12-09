@@ -13,6 +13,7 @@ namespace Entidades
 
         public decimal ValorSubtotal { get; set; }
         public Producto Producto { get; set; }
+        public Factura factura { get; set; }
 
         public Detalle_Factura()
         {
