@@ -12,10 +12,12 @@ namespace Logica
     {
         private readonly ConnectionManager conexion;
         private readonly FacturaRepository repositorio;
+        private readonly DetalleService detalle;
         public FacturaService(string connectionString)
         {
             conexion = new ConnectionManager(connectionString);
             repositorio = new FacturaRepository(conexion);
+            detalle = new DetalleService(connectionString);
         }
 
         public string GuardarFactura(Factura factura)
@@ -26,6 +28,7 @@ namespace Logica
                 if (repositorio.BuscarPorNumero(factura.NumeroFactura) == null)
                 {
                     repositorio.GuardarFactura(factura);
+                    detalle.GuardarDetalle(factura.DetalleFactura);
                     return $"Se guardaron los datos satisfactoriamente";
                 }
                 return $"La Factura ya existe";

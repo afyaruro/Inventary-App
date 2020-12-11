@@ -19,17 +19,18 @@ namespace Logica
             repositorio = new DetalleRepository(conexion);
         }
 
-        public string GuardarDetalle(Detalle_Factura detalle)
+        public string GuardarDetalle(List<Detalle_Factura> detalles)
         {
             try
             {
                 conexion.Open();
-                if (repositorio.BuscarPorNumero(detalle.idDetalle) == null)
+
+                foreach (var detalle in detalles)
                 {
-                    repositorio.GuardarFactura(detalle);
-                    return $"Se guardaron los datos satisfactoriamente";
+                        repositorio.GuardarFactura(detalle);
                 }
-                return $"La Factura ya existe";
+
+                return $"Se guardaron los datos satisfactoriamente";
             }
             catch (Exception e)
             {

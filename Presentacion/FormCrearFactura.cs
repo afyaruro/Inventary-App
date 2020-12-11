@@ -37,12 +37,19 @@ namespace Presentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            
-            Factura factura  = MapearFactura();
-            string mensaje = facturaService.GuardarFactura(factura);
+            CalcularTotalToPagar();
+            Factura factur = MapearFactura();
+            string mensaje = facturaService.GuardarFactura(factur);
             MessageBox.Show(mensaje, "Mensaje de Guardado", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             Limpiar();
         }
+
+        private void CalcularTotalToPagar()
+        {
+            factura.CalcularTotal();
+            txtTotal.Text = Convert.ToString(factura.TotalFactura);
+        }
+
         private Factura MapearFactura()
         {
             
@@ -152,7 +159,7 @@ namespace Presentacion
 
         private void btnTotal_Click(object sender, EventArgs e)
         {
-            factura.CalcularTotal();
+            CalcularTotalToPagar();
         }
 
         public void ActualizarTablaDetalles()

@@ -25,10 +25,7 @@ namespace Entidades
 
         public void CalcularTotal()
         {
-                foreach (var item in DetalleFactura)
-                {
-                    TotalFactura = TotalFactura + item.ValorSubtotal;
-                }
+            TotalFactura = DetalleFactura.Sum(p => p.ValorSubtotal);
         } 
         public void AñadirDetalleFactura(int cantidad, Producto producto)
         {
@@ -38,18 +35,20 @@ namespace Entidades
             {
                 detalle_.idDetalle = detalle_.idDetalle + 1;
             }
+
             detalle_.CalcularValorSubtotal();
             this.DetalleFactura.Add(detalle_);
         }
         public string EliminarDetalleFactura(int id)
         {
             var detalle = BuscarDetalleFactura(id);
-            if(detalle != null)
+            if (detalle != null)
             {
+
                 this.DetalleFactura.Remove(detalle);
                 return "Detalle Eliminado Correctamente";
             }
-            return "No se Encontro el Detalle a Eliminar";
+            return "No se Encontro el Detalle a Eliminar..";
             
         }
 
