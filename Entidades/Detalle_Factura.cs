@@ -20,7 +20,7 @@ namespace Entidades
 
         }
 
-        public Detalle_Factura(int cantidadProductosFacturados, Producto producto, Factura factura)
+        public Detalle_Factura(int cantidadProductosFacturados, Producto producto)
         {
             this.factura = factura;
             this.Producto = producto;

@@ -75,6 +75,8 @@ namespace Datos
 
         }
 
+        
+
         private Factura DataReaderMapToFactura(SqlDataReader dataReader)
         {
             if (!dataReader.HasRows) return null;

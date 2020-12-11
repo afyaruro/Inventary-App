@@ -42,6 +42,7 @@ namespace Presentacion
             string mensaje = facturaService.GuardarFactura(factur);
             MessageBox.Show(mensaje, "Mensaje de Guardado", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             Limpiar();
+            DetalleFactura.DataSource = null;
         }
 
         private void CalcularTotalToPagar()
@@ -88,8 +89,7 @@ namespace Presentacion
             if (codigo != "")
             {
                 respuesta = productoService.BuscarxCodigo(codigo);
-                factura.AñadirDetalleFactura(cantidad, respuesta.Producto);
-                MessageBox.Show("Se añadio Correctamente el Producto");
+                MessageBox.Show(factura.AñadirDetalleFactura(cantidad, respuesta.Producto));
                 ActualizarTablaDetalles();
             }
         }

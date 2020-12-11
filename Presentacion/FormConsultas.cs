@@ -15,8 +15,9 @@ namespace Presentacion
     public partial class FormConsultas : Form
     {
     
-          FacturaService facturaService;
-          List<Factura> facturas;
+        FacturaService facturaService;
+        List<DetalleService> detalleService;
+        List<Factura> facturas;
     public FormConsultas()
         {
             facturaService = new FacturaService(ConfigConnection.ConnectionString);
@@ -29,16 +30,15 @@ namespace Presentacion
             this.Close();
         }
 
-        private void FormConsultas_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if(cmbFiltro.Text == "Todos")
             {
                 ActualizarTabla();
+            }
+            else
+            {
+                CosultaPorNumeroDeFactura();
             }
         }
 
@@ -50,6 +50,40 @@ namespace Presentacion
             respuesta = facturaService.ConsultarTodos();
             facturas = respuesta.Facturas.ToList();
             ListaFactura.DataSource = respuesta.Facturas;
+
+        }
+
+        public void CosultaPorNumeroDeFactura()
+        {
+            BusquedaFacturaRespuesta respuesta = new BusquedaFacturaRespuesta();
+            string NFactura = txtFiltro.Text;
+
+            if (NFactura != "")
+            {
+                respuesta = facturaService.BuscarxNumero(NFactura);
+             
+                if(respuesta.Factura != null)
+                {
+                    MessageBox.Show("Factura Encontrada");
+                    MostrarDetalles(respuesta.Factura);
+                }
+                else
+                {
+                    MessageBox.Show("No Existe La Factura...");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se ha Ingresado Ningun Numero de Factura");
+                
+            }
+        }
+        public void MostrarDetalles(Factura factura)
+        {
+            txtCedula.Text = factura.cliente.CedulaCliente;
+            txtTotal.Text = Convert.ToString(factura.TotalFactura);
+            txtNumero.Text = factura.NumeroFactura;
+
 
         }
     }

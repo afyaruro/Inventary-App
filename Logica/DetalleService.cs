@@ -27,6 +27,7 @@ namespace Logica
 
                 foreach (var detalle in detalles)
                 {
+                        detalle.Producto.DescontarExistencias(detalle.CantidadProductosFacturados);
                         repositorio.GuardarFactura(detalle);
                 }
 

@@ -27,17 +27,24 @@ namespace Entidades
         {
             TotalFactura = DetalleFactura.Sum(p => p.ValorSubtotal);
         } 
-        public void AñadirDetalleFactura(int cantidad, Producto producto)
+        public string AñadirDetalleFactura(int cantidad, Producto producto)
         {
-            Detalle_Factura detalle_ = new Detalle_Factura(cantidad, producto, this);
 
-            foreach (var item in DetalleFactura)
+            Detalle_Factura detalle_ = new Detalle_Factura(cantidad, producto);
+
+            if(detalle_.Producto.Estado == "Activo")
             {
-                detalle_.idDetalle = detalle_.idDetalle + 1;
-            }
+                foreach (var item in DetalleFactura)
+                {
+                    detalle_.idDetalle = detalle_.idDetalle + 1;
+                }
 
-            detalle_.CalcularValorSubtotal();
-            this.DetalleFactura.Add(detalle_);
+                detalle_.CalcularValorSubtotal();
+                this.DetalleFactura.Add(detalle_);
+
+                return "Se Añadio Correctamente..";
+            }
+            return "No se Puede Realizar La Operacion Porque el Producto No esta Activo";
         }
         public string EliminarDetalleFactura(int id)
         {

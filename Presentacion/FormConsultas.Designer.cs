@@ -35,14 +35,16 @@
             this.labelNumeroFactura = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ListaDetalle = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.txtCedula = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ListaFactura)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListaDetalle)).BeginInit();
             this.SuspendLayout();
             // 
             // ListaFactura
@@ -117,15 +119,15 @@
             this.cmbFiltro.Size = new System.Drawing.Size(180, 24);
             this.cmbFiltro.TabIndex = 51;
             // 
-            // dataGridView1
+            // ListaDetalle
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(62, 311);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(673, 199);
-            this.dataGridView1.TabIndex = 52;
+            this.ListaDetalle.BackgroundColor = System.Drawing.Color.White;
+            this.ListaDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ListaDetalle.GridColor = System.Drawing.Color.White;
+            this.ListaDetalle.Location = new System.Drawing.Point(62, 311);
+            this.ListaDetalle.Name = "ListaDetalle";
+            this.ListaDetalle.Size = new System.Drawing.Size(673, 199);
+            this.ListaDetalle.TabIndex = 52;
             // 
             // label1
             // 
@@ -141,37 +143,55 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(478, 530);
+            this.label2.Location = new System.Drawing.Point(496, 530);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 22);
             this.label2.TabIndex = 54;
             this.label2.Text = "Total Factura";
             // 
-            // textBox1
+            // txtTotal
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(602, 529);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(115, 20);
-            this.textBox1.TabIndex = 55;
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Location = new System.Drawing.Point(620, 534);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(115, 20);
+            this.txtTotal.TabIndex = 55;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(183, 531);
+            this.label3.Location = new System.Drawing.Point(224, 536);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(142, 18);
             this.label3.TabIndex = 56;
             this.label3.Text = "Numero de Factura";
             // 
-            // textBox2
+            // txtNumero
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(331, 529);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(118, 20);
-            this.textBox2.TabIndex = 57;
+            this.txtNumero.Enabled = false;
+            this.txtNumero.Location = new System.Drawing.Point(372, 534);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(118, 20);
+            this.txtNumero.TabIndex = 57;
+            // 
+            // txtCedula
+            // 
+            this.txtCedula.Enabled = false;
+            this.txtCedula.Location = new System.Drawing.Point(100, 534);
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(118, 20);
+            this.txtCedula.TabIndex = 59;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(36, 536);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 18);
+            this.label4.TabIndex = 58;
+            this.label4.Text = "Cedula";
             // 
             // FormConsultas
             // 
@@ -179,12 +199,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(783, 561);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtCedula);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.ListaDetalle);
             this.Controls.Add(this.cmbFiltro);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnBuscar);
@@ -193,9 +215,8 @@
             this.Controls.Add(this.ListaFactura);
             this.Name = "FormConsultas";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.FormConsultas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ListaFactura)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListaDetalle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,11 +230,13 @@
         private System.Windows.Forms.Button btnCerrar;
         public System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.ComboBox cmbFiltro;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ListaDetalle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNumero;
+        private System.Windows.Forms.TextBox txtCedula;
+        private System.Windows.Forms.Label label4;
     }
 }
