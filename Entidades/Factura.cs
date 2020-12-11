@@ -8,7 +8,6 @@ namespace Entidades
 {
     public class Factura
     {
-
         public string NumeroFactura { get; set; }
         public decimal TotalFactura { get; set; }
         public List<Detalle_Factura> DetalleFactura { get; set; }
@@ -24,39 +23,41 @@ namespace Entidades
         }
         
 
-        public string CalcularTotal()
+        public void CalcularTotal()
         {
-            if (DetalleFactura != null)
-            {
                 foreach (var item in DetalleFactura)
                 {
                     TotalFactura = TotalFactura + item.ValorSubtotal;
                 }
-
-                return "Se calculo el total Correctamente";
-            }
-            else
-            {
-                return "No hay detalles de factura";
-            }
-            
         } 
         public void AñadirDetalleFactura(int cantidad, Producto producto)
         {
-            Detalle_Factura detalle_ = new Detalle_Factura();
+            Detalle_Factura detalle_ = new Detalle_Factura(cantidad, producto, this);
+
+            foreach (var item in DetalleFactura)
+            {
+                detalle_.idDetalle = detalle_.idDetalle + 1;
+            }
+            detalle_.CalcularValorSubtotal();
             this.DetalleFactura.Add(detalle_);
         }
-        public void EliminarDetalleFactura(string codigo)
+        public string EliminarDetalleFactura(int id)
         {
-            var detalle = BuscarDetalleFactura(codigo);
-            this.DetalleFactura.Remove(detalle);
+            var detalle = BuscarDetalleFactura(id);
+            if(detalle != null)
+            {
+                this.DetalleFactura.Remove(detalle);
+                return "Detalle Eliminado Correctamente";
+            }
+            return "No se Encontro el Detalle a Eliminar";
+            
         }
 
-        public Detalle_Factura BuscarDetalleFactura(string codigo)
+        public Detalle_Factura BuscarDetalleFactura(int id)
         {
             foreach (var  detalle in this.DetalleFactura)
             {
-                if (detalle.Producto.CodigoProducto == codigo)
+                if (detalle.idDetalle == id)
                 {
                     return detalle;
                 }

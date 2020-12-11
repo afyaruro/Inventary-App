@@ -18,16 +18,16 @@ namespace Presentacion
         Factura factura;
         ProductoService productoService;
         ClienteService clienteService;
-        List<Factura> facturas;
+        
         public FormCrearFactura()
         {
             
             facturaService = new FacturaService(ConfigConnection.ConnectionString);
             productoService = new ProductoService(ConfigConnection.ConnectionString);
             clienteService = new ClienteService(ConfigConnection.ConnectionString);
-            facturas = new List<Factura>();
             InitializeComponent();
             factura = new Factura();
+            
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -83,7 +83,7 @@ namespace Presentacion
                 respuesta = productoService.BuscarxCodigo(codigo);
                 factura.AñadirDetalleFactura(cantidad, respuesta.Producto);
                 MessageBox.Show("Se añadio Correctamente el Producto");
-
+                ActualizarTablaDetalles();
             }
         }
 
@@ -152,17 +152,27 @@ namespace Presentacion
 
         private void btnTotal_Click(object sender, EventArgs e)
         {
-            
+            factura.CalcularTotal();
         }
 
         public void ActualizarTablaDetalles()
         {
-            ConsultaFacturaRespuesta respuesta = new ConsultaFacturaRespuesta();
-
             DetalleFactura.DataSource = null;
-            respuesta = facturaService.ConsultarTodos();
-            productos = respuesta.Productos.ToList();
-            TablaProducto.DataSource = respuesta.Productos;
+            DetalleFactura.DataSource = factura.DetalleFactura;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (txtIdDetalle.Text == "") {
+                MessageBox.Show("Por Favor ingrese el id de un Detalle");
+            }
+            else
+            {
+                var id = int.Parse(txtIdDetalle.Text);
+                MessageBox.Show(factura.EliminarDetalleFactura(id));
+                ActualizarTablaDetalles();
+            }
+            
         }
     }
 }

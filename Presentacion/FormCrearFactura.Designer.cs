@@ -64,6 +64,8 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnTotal = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtIdDetalle = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleFactura)).BeginInit();
             this.SuspendLayout();
             // 
@@ -263,6 +265,7 @@
             this.btnEliminar.TabIndex = 73;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // labelTotal
             // 
@@ -438,12 +441,33 @@
             this.btnTotal.UseVisualStyleBackColor = true;
             this.btnTotal.Click += new System.EventHandler(this.btnTotal_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(309, 232);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 16);
+            this.label1.TabIndex = 105;
+            this.label1.Text = "Id Detalle";
+            // 
+            // txtIdDetalle
+            // 
+            this.txtIdDetalle.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdDetalle.Location = new System.Drawing.Point(377, 226);
+            this.txtIdDetalle.Name = "txtIdDetalle";
+            this.txtIdDetalle.Size = new System.Drawing.Size(100, 22);
+            this.txtIdDetalle.TabIndex = 106;
+            // 
             // FormCrearFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(783, 561);
+            this.Controls.Add(this.txtIdDetalle);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnTotal);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnLimpiar);
@@ -528,5 +552,7 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnTotal;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtIdDetalle;
     }
 }

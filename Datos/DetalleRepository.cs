@@ -21,10 +21,9 @@ namespace Datos
         {
             using (var commando = _conection.CreateCommand())
             {
-                commando.CommandText = "Insert Into Detalle (Id, Cantidad, Valor_Subtotal, CodigoProducto, NumeroFactura) " +
-                    "Values (@Id, @Cantidad, @Valor_Subtotal, @CodigoProducto, @NumeroFactura)";
+                commando.CommandText = "Insert Into Detalle (Cantidad, Valor_Subtotal, CodigoProducto, NumeroFactura) " +
+                    "Values (@Cantidad, @Valor_Subtotal, @CodigoProducto, @NumeroFactura)";
 
-                commando.Parameters.AddWithValue("@Id", detalle_.idDetalle);
                 commando.Parameters.AddWithValue("@Cantidad", detalle_.CantidadProductosFacturados);
                 commando.Parameters.AddWithValue("@Valor_Subtotal", detalle_.ValorSubtotal);
                 commando.Parameters.AddWithValue("@CodigoProducto", detalle_.Producto.CodigoProducto);
@@ -57,7 +56,7 @@ namespace Datos
         }
 
 
-        public Detalle_Factura BuscarPorNumero(string idDetalle)
+        public Detalle_Factura BuscarPorNumero(int idDetalle)
         {
             SqlDataReader dataReader;
             Detalle_Factura detalle;
@@ -81,7 +80,7 @@ namespace Datos
             
             if (!dataReader.HasRows) return null;
             Detalle_Factura detalle = new Detalle_Factura();
-            detalle.idDetalle = (string)dataReader["Id"];
+            detalle.idDetalle = (int)dataReader["Id"];
             detalle.CantidadProductosFacturados = (int)dataReader["Cantidad"];
             detalle.ValorSubtotal = (decimal)dataReader["Valor_Subtotal"];
             detalle.Producto.CodigoProducto = (string)dataReader["CodigoProducto"];

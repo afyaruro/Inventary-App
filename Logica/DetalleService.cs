@@ -61,7 +61,7 @@ namespace Logica
 
         }
 
-        public BusquedaDetalleRespuesta BuscarxNumero(string idDetalle)
+        public BusquedaDetalleRespuesta BuscarxNumero(int idDetalle)
         {
             BusquedaDetalleRespuesta respuesta = new BusquedaDetalleRespuesta();
             try
@@ -99,4 +99,4 @@ public class BusquedaDetalleRespuesta
     public string Mensaje { get; set; }
     public Detalle_Factura detalle { get; set; }
 }
-}
+

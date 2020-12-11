@@ -8,10 +8,10 @@ namespace Entidades
 {
     public class Detalle_Factura
     {
-        public string idDetalle { get; set; }
+        public int idDetalle { get; set; }
         public int CantidadProductosFacturados { get; set; }
-
         public decimal ValorSubtotal { get; set; }
+        public string CodigoProducto { get; set; }
         public Producto Producto { get; set; }
         public Factura factura { get; set; }
 
@@ -20,9 +20,11 @@ namespace Entidades
 
         }
 
-        public Detalle_Factura(int cantidadProductosFacturados, Producto producto)
+        public Detalle_Factura(int cantidadProductosFacturados, Producto producto, Factura factura)
         {
+            this.factura = factura;
             this.Producto = producto;
+            CodigoProducto = producto.CodigoProducto;
             this.CantidadProductosFacturados = cantidadProductosFacturados;
         }
 
